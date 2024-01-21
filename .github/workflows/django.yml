@@ -21,13 +21,9 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Change Directory
-      run: |
-        cd src/
     - name: Install Dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -r ./req.txt
+        pip install django djangorestframework
     - name: Run Tests
       run: |
         python manage.py runserver
